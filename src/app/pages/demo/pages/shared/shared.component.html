@@ -1,10 +1,14 @@
-<h2>Form</h2>
-<app-button (click)="onPatchValue()" >Patch Value</app-button>
+<h2 xmlns="http://www.w3.org/1999/html">Form</h2>
 
 <form [formGroup]="form" novalidate autocomplate = 'off' (ngSubmit)="onSubmit()">
-  <app-input formControlName="input">
+<app-button (click)="onPatchValue()" >Patch Value</app-button>
+<app-button (click)="onToggleInline()" >Toggle Inline</app-button>
+  <br>
+  <app-form-field label="Input" [required]="true" [control]="form.controls.input" [isInline]="isInline">
+    <app-input formControlName="input">
+    </app-input>
+  </app-form-field>
 
-  </app-input>
 </form>
 
 <code>{{form.value | json}}</code>
