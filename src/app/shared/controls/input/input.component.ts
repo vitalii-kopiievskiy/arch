@@ -20,30 +20,43 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   value: string;
   isDisabled;
 
-  constructor() {  }
-  ngOnInit(): void {}
+  constructor() {
+  }
 
-  private propagateChange: any = () => {}
-  private propagateTouched: any = () => {}
+  ngOnInit(): void {
+  }
+
+  private propagateChange: any = () => {
+
+  }
+
+  private propagateTouched: any = () => {
+
+  }
 
   writeValue(value: any): void {
     this.value = value;
   }
+
   registerOnChange(fn: any): void {
     this.propagateChange = fn;
   }
+
   registerOnTouched(fn: any): void {
     this.propagateTouched = fn;
   }
+
   setDisabledState(isDisabled: boolean): void {
     this.isDisabled = isDisabled;
   }
+
   onKeyup(value: string): void {
     this.value = value;
     console.log(this.value);
     this.propagateChange(value);
     this.changed.emit();
   }
+
   onBlur(): void {
     this.propagateTouched();
   }
