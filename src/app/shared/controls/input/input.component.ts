@@ -1,7 +1,6 @@
 import {Component, OnInit, forwardRef, Input, Output, EventEmitter} from '@angular/core';
 import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
 
-
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
@@ -16,11 +15,11 @@ import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
   ]
 })
 export class InputComponent implements OnInit, ControlValueAccessor {
-  @Input() placeholder: string = '';
+  @Input() placeholder;
   @Output() changed = new EventEmitter<string>();
 
   value: string;
-  isDisabled = true;
+  isDisabled;
 
   constructor() {
   }
@@ -33,7 +32,6 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 
   private propagateTouched: any = () => {
   }
-
 
   writeValue(value: any): void {
     this.value = value;
