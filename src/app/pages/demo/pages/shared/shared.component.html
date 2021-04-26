@@ -4,7 +4,7 @@
 <app-button (click)="onPatchValue()" >Patch Value</app-button>
 <app-button (click)="onToggleInline()" >Toggle Inline</app-button>
   <br>
-  <app-form-field label="Input" [required]="true" [control]="form.controls.input" [isInline]="isInline">
+  <app-form-field label="Input" [required]="true" [control]="form.controls.input" [isInline]="isInline" [patternError]="regexErrors.email">
     <app-input formControlName="input">
     </app-input>
   </app-form-field>
