@@ -1,6 +1,10 @@
 import {Component, OnInit, forwardRef, Input, Output, EventEmitter} from '@angular/core';
 import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
+
 import {ControlItem, Value} from '../../../models/frontend';
+
+export {ControlItem, Value} from '../../../models/frontend';
+import {MatSelectChange} from '@angular/material/select';
 
 @Component({
   selector: 'app-select',
@@ -22,16 +26,17 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   value: Value;
   isDisabled: boolean;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
   private propagateChange: any = () => {
-  }
+  };
 
   private propagateTouched: any = () => {
-  }
+  };
 
   writeValue(value: Value): void {
     this.value = value;
@@ -47,6 +52,18 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
 
   setDisabledState(isDisabled: boolean): void {
     this.isDisabled = isDisabled;
+  }
+
+  onChanged(event: MatSelectChange): void {
+    const value = event.value ? event.value : null;
+
+    this.value = value;
+    this.propagateChange(value);
+    this.changed.emit(value);
+  }
+
+  onBlur(): void {
+    this.propagateTouched();
   }
 
 }

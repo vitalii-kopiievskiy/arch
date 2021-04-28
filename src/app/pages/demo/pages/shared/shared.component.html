@@ -1,4 +1,4 @@
-<h2 xmlns="http://www.w3.org/1999/html">Form</h2>
+<h2>Form</h2>
 
 <form [formGroup]="form" novalidate autocomplate = 'off' (ngSubmit)="onSubmit()">
 <app-button (click)="onPatchValue()" >Patch Value</app-button>
@@ -8,10 +8,16 @@
     <app-input formControlName="input">
     </app-input>
   </app-form-field>
+
   <app-form-field label="Password" [required]="true" [control]="form.controls.password" [isInline]="isInline">
     <app-password formControlName="password"></app-password>
   </app-form-field>
-  <app-select></app-select>
+
+  <app-form-field label="Select" [required]="true" [control]="form.controls.select" [isInline]="isInline">
+    <app-select formControlName="select" [items]="items"></app-select>
+  </app-form-field>
+
 </form>
 
 <code>{{form.value | json}}</code>
+
