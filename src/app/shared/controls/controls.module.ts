@@ -7,6 +7,7 @@ import {SelectModule} from './select/select.module';
 import {CheckboxesModule} from './checkboxes/checkboxes.module';
 import {RadiosModule} from './radios/radios.module';
 import {DateModule} from './date/date.module';
+import {AutocompleteModule} from './autocomplete/autocomplete.module';
 
 
 
@@ -20,7 +21,8 @@ import {DateModule} from './date/date.module';
     SelectModule,
     CheckboxesModule,
     RadiosModule,
-    DateModule
+    DateModule,
+    AutocompleteModule
   ],
   exports: [
     InputModule,
@@ -29,7 +31,8 @@ import {DateModule} from './date/date.module';
     SelectModule,
     CheckboxesModule,
     RadiosModule,
-    DateModule
+    DateModule,
+    AutocompleteModule
   ]
 })
 export class ControlsModule { }
