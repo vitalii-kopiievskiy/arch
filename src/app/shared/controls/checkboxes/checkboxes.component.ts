@@ -2,7 +2,6 @@ import {Component, OnInit, Input, Output, EventEmitter, forwardRef} from '@angul
 import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
 
 import {ControlItem, Value} from '../../../models/frontend';
-
 export {ControlItem, Value} from '../../../models/frontend';
 
 @Component({
