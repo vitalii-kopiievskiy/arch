@@ -15,6 +15,7 @@ export class SharedComponent implements OnInit {
   regexErrors = regexErrors;
   items: ControlItem[];
 
+  showSpinner = true;
 
   constructor(private fb: FormBuilder) {
     this.isInline = true;
@@ -111,5 +112,17 @@ export class SharedComponent implements OnInit {
     } else {
       this.form.enable();
     }
+  }
+
+  onToggleSpinner() {
+    this.showSpinner = !this.showSpinner
+  }
+
+  onError() {
+
+  }
+
+  onSuccess() {
+
   }
 }
