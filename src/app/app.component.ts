@@ -13,8 +13,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.afs.collection('testColl').snapshotChanges().subscribe(items => {
-      console.log(items.map(item => item.payload.doc.data()));
-    });
+    // this.afs.collection('testColl').snapshotChanges().subscribe(items => {
+    //   console.log(items.map(item => item.payload.doc.data()));
+    // });
   }
 }
