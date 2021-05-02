@@ -10,6 +10,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {MatNativeDateModule, MatDateFormats, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 
+
 const APP_DATE_FORMATS: MatDateFormats = {
   parse: {
     dateInput: {day: 'numeric', month: 'numeric', year: 'numeric'},
@@ -23,6 +24,7 @@ const APP_DATE_FORMATS: MatDateFormats = {
 };
 
 import {HeaderComponent} from './components/header/header.component';
+import {NotificationModule} from './services';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import {HeaderComponent} from './components/header/header.component';
     AngularFireModule.initializeApp(environment.firebase.config),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    NotificationModule.forRoot()
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
