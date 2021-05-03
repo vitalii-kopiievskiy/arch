@@ -1,4 +1,6 @@
 import {Employee, Recruiter} from './roles';
+import { firestore } from 'firebase/app';
+export * from './roles';
 
 export interface User {
   uid: string;
