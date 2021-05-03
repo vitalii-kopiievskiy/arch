@@ -20,6 +20,6 @@ export class AppComponent implements OnInit {
     //   console.log(items.map(item => item.payload.doc.data()));
     // });
 
-    this.store.dispatch(new fromDictionaries.Read())
+    this.store.dispatch(new fromDictionaries.Read());
   }
 }
