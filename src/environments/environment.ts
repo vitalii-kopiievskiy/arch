@@ -12,6 +12,10 @@ export const environment = {
       storageBucket: 'ng-arch.appspot.com',
       messagingSenderId: '935803331821',
       appId: '1:935803331821:web:aafe171842640f457a58e4'
+    },
+    actionCodeSettings: {
+      url: 'http://localhost:4200/demo',
+      handleCodeInApp: true
     }
   }
 };
