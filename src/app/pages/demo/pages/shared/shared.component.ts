@@ -17,7 +17,7 @@ export class SharedComponent implements OnInit {
   regexErrors = regexErrors;
   items: ControlItem[];
 
-  showSpinner = true;
+  showSpinner = false;
 
   constructor(private fb: FormBuilder, private notification: NotificationService) {
     this.isInline = true;

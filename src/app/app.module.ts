@@ -24,7 +24,20 @@ const APP_DATE_FORMATS: MatDateFormats = {
 };
 
 import {HeaderComponent} from './components/header/header.component';
+
+// Services
+
 import {NotificationModule} from './services';
+
+// Store
+
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+const StoreDevTools = !environment.production ? StoreDevtoolsModule.instrument({maxAge: 50}) : [];
+
+import { reducers, effects} from './store';
 
 @NgModule({
   declarations: [
@@ -39,6 +52,14 @@ import {NotificationModule} from './services';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
+    StoreModule.forRoot(reducers, {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    }),
+    EffectsModule.forRoot(effects),
+    StoreDevTools,
     NotificationModule.forRoot()
   ],
   providers: [
